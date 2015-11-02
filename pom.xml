@@ -12,8 +12,14 @@
     <description>A pluggable Identity Provider (IdP)</description>
 
     <modules>
+        <module>xacml</module>
         <module>aniketos-entities</module>
         <module>aniketos-core</module>
+        <module>aniketos-stub-providers</module>
+        <module>aniketos-default-providers</module>
+        <module>aniketos-hibernate-providers</module>
+        <module>aniketos-client</module>
+        <module>aniketos-security-framework-provider</module>
     </modules>
 
     <licenses>
@@ -48,6 +54,15 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
+    <!-- Required for Balana -->
+    <repositories>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 Releases Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>
@@ -98,7 +113,7 @@
             </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
-                <artifactId>http-client</artifactId>
+                <artifactId>http-dclient</artifactId>
                 <version>1.0</version>
             </dependency>
             <dependency>
@@ -124,22 +139,22 @@
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>service-framework-test</artifactId>
-                <version>1.0</version>
+                <version>1.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>service-framework-yaml</artifactId>
                 <version>1.0</version>
             </dependency>
-            <!--<dependency>-->
-                <!--<groupId>com.df.argos.commons</groupId>-->
-                <!--<artifactId>xacml-jaxb</artifactId>-->
-                <!--<version>${commons.version}</version>-->
-            <!--</dependency>-->
             <dependency>
-                <groupId>com.df.argos.commons</groupId>
+                <groupId>com.daedafusion.aniketos</groupId>
+                <artifactId>xacml-jaxb</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.daedafusion.aniketos</groupId>
                 <artifactId>xacml-json</artifactId>
-                <version>${commons.version}</version>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -200,6 +215,11 @@
                 <groupId>net.logstash.log4j</groupId>
                 <artifactId>jsonevent-layout</artifactId>
                 <version>1.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jvnet.jaxb2_commons</groupId>
+                <artifactId>jaxb2-basics</artifactId>
+                <version>0.9.3</version>
             </dependency>
             <dependency>
                 <groupId>net.sf.ehcache</groupId>
@@ -289,7 +309,7 @@
             <dependency>
                 <groupId>org.wso2.balana</groupId>
                 <artifactId>org.wso2.balana</artifactId>
-                <version>1.0.0-wso2v6</version>
+                <version>1.0.1</version>
             </dependency>
             <dependency>
                 <groupId>org.yaml</groupId>
@@ -305,8 +325,17 @@
             <artifactId>log4j</artifactId>
         </dependency>
         <dependency>
+            <groupId>net.logstash.log4j</groupId>
+            <artifactId>jsonevent-layout</artifactId>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

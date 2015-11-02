@@ -6,15 +6,14 @@ import com.daedafusion.sf.ServiceFramework;
 import com.daedafusion.sf.ServiceFrameworkException;
 import com.daedafusion.sf.ServiceFrameworkFactory;
 import org.apache.log4j.Logger;
+import org.oasis.xacml.json.Request;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 /**
  * Created by mphilpot on 7/11/14.
@@ -35,53 +34,35 @@ public class AuthorizationService
     @Produces(MediaType.APPLICATION_XML)
     public String evaluate(String request)
     {
-        try
-        {
-            ServiceFramework framework = ServiceFrameworkFactory.getInstance().getFramework();
+        ServiceFramework framework = ServiceFrameworkFactory.getInstance().getFramework();
 
-            ServerAuthorization auth = framework.getService(ServerAuthorization.class);
+        ServerAuthorization auth = framework.getService(ServerAuthorization.class);
 
-            return auth.evaluate(request);
-
-        }
-        catch (ServiceFrameworkException e)
-        {
-            log.error("", e);
-            throw new ServiceErrorException();
-        }
+        return auth.evaluate(request);
     }
 
-//    @POST
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public org.oasis.xacml.json.Response evaluate(@HeaderParam("authorization") String tokenString,
-//                                          org.oasis.xacml.json.Request request)
-//    {
-//        try
-//        {
-//            ServiceFramework framework = ServiceFrameworkFactory.getInstance().getFramework();
-//
-//            ServerAuthorization auth = (ServerAuthorization) framework.getService(ServerAuthorization.URI);
-//
-//            // TODO Convert json to jaxb representation
-//
-//            return null;
-//
-//        }
-//        catch (ServiceFrameworkException e)
-//        {
-//            log.error("", e);
-//            throw new ServiceErrorException();
-//        }
-//    }
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public org.oasis.xacml.json.Response evaluate(@HeaderParam("authorization") String tokenString,
+                                          org.oasis.xacml.json.Request request)
+    {
+        ServiceFramework framework = ServiceFrameworkFactory.getInstance().getFramework();
 
-//    @POST
-//    @Path("tree")
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response evaluateTree(@HeaderParam("authorization") String token,
-//                                              Request request)
-//    {
-//        return null;
-//    }
+        ServerAuthorization auth = (ServerAuthorization) framework.getService(ServerAuthorization.class);
+
+        // TODO Convert json to jaxb representation
+
+        throw new UnsupportedOperationException("Authentication XACML JSON Not Yet Supported");
+    }
+
+    @POST
+    @Path("tree")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response evaluateTree(@HeaderParam("authorization") String token,
+                                              Request request)
+    {
+        throw new UnsupportedOperationException("Authentication Tree Not Supported");
+    }
 }
