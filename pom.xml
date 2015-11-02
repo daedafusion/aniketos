@@ -20,6 +20,7 @@
         <module>aniketos-hibernate-providers</module>
         <module>aniketos-client</module>
         <module>aniketos-security-framework-provider</module>
+        <module>aniketos-server</module>
     </modules>
 
     <licenses>
@@ -121,11 +122,11 @@
                 <artifactId>security-framework</artifactId>
                 <version>1.0</version>
             </dependency>
-            <!--<dependency>-->
-                <!--<groupId>com.df.argos.commons</groupId>-->
-                <!--<artifactId>service-bootstrap</artifactId>-->
-                <!--<version>${commons.version}</version>-->
-            <!--</dependency>-->
+            <dependency>
+                <groupId>com.daedafusion</groupId>
+                <artifactId>service-bootstrap</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>service-discovery</artifactId>

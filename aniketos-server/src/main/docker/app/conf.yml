@@ -1,0 +1,7 @@
+packaging:
+  add:
+    - target/aniketos-server.jar
+    - target/aniketos-default-providers-${project.version}-plugin.zip
+    - target/aniketos-stub-providers-${project.version}-plugin.zip
+    - target/aniketos-hibernate-providers-${project.version}-plugin.zip
+tag: daedafusion/aniketos
