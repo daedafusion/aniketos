@@ -125,7 +125,7 @@
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>service-bootstrap</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>1.0</version>
             </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
@@ -135,17 +135,17 @@
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>service-framework-core</artifactId>
-                <version>1.0</version>
+                <version>${sf.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>service-framework-test</artifactId>
-                <version>1.1-SNAPSHOT</version>
+                <version>${sf.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>service-framework-yaml</artifactId>
-                <version>1.0</version>
+                <version>${sf.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.daedafusion.aniketos</groupId>
@@ -496,6 +496,7 @@
         <jackson.version>2.5.1</jackson.version>
         <jersey.version>2.16</jersey.version>
         <hibernate.version>4.3.8.Final</hibernate.version>
+        <sf.version>1.0.1</sf.version>
     </properties>
 
     <profiles>

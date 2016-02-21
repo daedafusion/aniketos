@@ -46,9 +46,12 @@ public class JWTStoreTest
     }
 
     @Test
-    public void test1create()
+    public void test1create() throws InterruptedException
     {
         long now = System.currentTimeMillis();
+
+        Thread.sleep(20);
+
         String token = store.newToken("test@domain.com", "domain.com");
 
         assertThat(token, is(notNullValue()));
