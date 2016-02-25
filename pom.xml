@@ -20,7 +20,6 @@
         <module>aniketos-hibernate-providers</module>
         <module>aniketos-client</module>
         <module>aniketos-security-framework-provider</module>
-        <module>aniketos-server</module>
     </modules>
 
     <licenses>
@@ -68,11 +67,6 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>co.paralleluniverse</groupId>
-                <artifactId>capsule</artifactId>
-                <version>0.10.0</version>
-            </dependency>
-            <dependency>
                 <groupId>com.daedafusion.aniketos</groupId>
                 <artifactId>aniketos-client</artifactId>
                 <version>${project.version}</version>
@@ -95,7 +89,7 @@
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>configuration-etcd</artifactId>
-                <version>1.0</version>
+                <version>1.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
@@ -115,22 +109,17 @@
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>http-dclient</artifactId>
-                <version>1.0</version>
+                <version>1.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>security-framework</artifactId>
-                <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.daedafusion</groupId>
-                <artifactId>service-bootstrap</artifactId>
-                <version>1.0</version>
+                <version>1.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
                 <artifactId>service-discovery</artifactId>
-                <version>1.0</version>
+                <version>1.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
@@ -175,7 +164,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>18.0</version>
+                <version>15.0</version>
             </dependency>
             <dependency>
                 <groupId>com.nimbusds</groupId>
@@ -496,7 +485,7 @@
         <jackson.version>2.5.1</jackson.version>
         <jersey.version>2.16</jersey.version>
         <hibernate.version>4.3.8.Final</hibernate.version>
-        <sf.version>1.0.1</sf.version>
+        <sf.version>1.1-SNAPSHOT</sf.version>
     </properties>
 
     <profiles>
