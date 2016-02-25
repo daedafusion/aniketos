@@ -998,7 +998,7 @@ public final class LdapIdentityBackend
     /**
      * Returns a list of Identity objects for all identities, regardless of domain
      *
-     * @return List<Identity>
+     * @return List
      * @throws LdapIdentityBackendException
      */
     public List<Identity> getAllIdentities() throws LdapIdentityBackendException
@@ -1022,7 +1022,7 @@ public final class LdapIdentityBackend
     /**
      * Retrieves a list of names for all identities defined
      *
-     * @return List<String>
+     * @return List
      * @throws LdapIdentityBackendException
      */
     public List<String> listAllIdentities() throws LdapIdentityBackendException
@@ -1052,7 +1052,7 @@ public final class LdapIdentityBackend
      * Returns a list of Identity objects for all identities within the domain specified
      *
      * @param domain
-     * @return List<Identity>
+     * @return List
      * @throws LdapIdentityBackendException
      */
     public List<Identity> getIdentitiesForDomain(String domain) throws LdapIdentityBackendException
@@ -1383,7 +1383,7 @@ public final class LdapIdentityBackend
     /**
      * Retrieves a list of names for all domains defined
      *
-     * @return List<String>
+     * @return List
      * @throws LdapIdentityBackendException
      */
     public List<String> listAllDomains() throws LdapIdentityBackendException
@@ -1661,7 +1661,7 @@ public final class LdapIdentityBackend
     /**
      * Returns a list of Capability objects
      *
-     * @return List<Capability>
+     * @return List
      * @throws LdapIdentityBackendException
      */
     public List<Capability> getCapabilities() throws LdapIdentityBackendException
@@ -1684,7 +1684,7 @@ public final class LdapIdentityBackend
     /**
      * Returns a list of names of Capabilities that have been defined
      *
-     * @return List<String>
+     * @return List
      * @throws LdapIdentityBackendException
      */
     public List<String> listCapabilities() throws LdapIdentityBackendException
@@ -1886,7 +1886,7 @@ public final class LdapIdentityBackend
      * Lookup zero or more LDAP entities representing an Identity based on the parameters
      *
      * @param parameters
-     * @return List<Identity>
+     * @return List
      * @throws LdapIdentityBackendException
      */
     public List<Identity> search(Map<String, String> parameters) throws LdapIdentityBackendException
@@ -1988,7 +1988,6 @@ public final class LdapIdentityBackend
 
     /**
      * Updates the named or global Password Policy.
-     * <p/>
      * A Password Policy with that name will be created if one doesn't exist
      *
      * @param policy
@@ -2196,7 +2195,6 @@ public final class LdapIdentityBackend
 
     /**
      * Updates the named or global Lockout Policy.
-     * <p/>
      * A Lockout Policy with that name will be created if one doesn't exist
      *
      * @param policy
