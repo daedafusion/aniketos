@@ -20,6 +20,7 @@
         <module>aniketos-hibernate-providers</module>
         <module>aniketos-client</module>
         <module>aniketos-security-framework-provider</module>
+        <module>aniketos-server</module>
     </modules>
 
     <licenses>
@@ -123,6 +124,11 @@
             </dependency>
             <dependency>
                 <groupId>com.daedafusion</groupId>
+                <artifactId>service-bootstrap</artifactId>
+                <version>1.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.daedafusion</groupId>
                 <artifactId>service-framework-core</artifactId>
                 <version>${sf.version}</version>
             </dependency>
@@ -190,6 +196,11 @@
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>2.7</version>
+            </dependency>
+            <dependency>
+                <groupId>co.paralleluniverse</groupId>
+                <artifactId>capsule</artifactId>
+                <version>1.0.1</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
