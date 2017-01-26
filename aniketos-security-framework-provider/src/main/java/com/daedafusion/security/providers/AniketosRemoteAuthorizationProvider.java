@@ -14,6 +14,7 @@ import org.oasis.xacml.jaxb.AttributeValueType;
 import org.oasis.xacml.jaxb.Attributes;
 import org.oasis.xacml.jaxb.Request;
 
+import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.util.List;
 import java.util.Set;
@@ -30,6 +31,12 @@ public class AniketosRemoteAuthorizationProvider extends AbstractProvider implem
     {
         Request request = new Request();
 
+        return null;
+    }
+
+    @Override
+    public Decision getAccessDecision(Subject subject, HttpServletRequest request, Context context)
+    {
         return null;
     }
 
